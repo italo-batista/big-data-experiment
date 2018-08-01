@@ -10,7 +10,7 @@ sudo apt-get update
 
 sudo apt-get install -y mongodb-org
 
-sudo mv mongodb.service /etc/systemd/system/
+sudo mv files/mongodb.service /etc/systemd/system/
 
 # Start services
 
