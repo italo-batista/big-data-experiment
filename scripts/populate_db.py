@@ -6,8 +6,10 @@ from pprint import pprint
 import sys
 import os
 
+DB_NAME = 'recsys'
+
 client = MongoClient('localhost', 27017)
-db = client.recsys
+db = client[DB_NAME]
 
 HOME_USER = os.path.expanduser('~')
 path = HOME_USER +  "/data/recsys/"
