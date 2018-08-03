@@ -1,8 +1,8 @@
 # Set up Database
 bash install_mongo.sh;
 
-# sudo apt-get install python-setuptools python-dev build-essential -y;
-easy_install pip;
+sudo apt-get install python-setuptools python-dev build-essential -y;
+sudo easy_install pip;
 pip install pymongo;
 
 bash create_db.sh;

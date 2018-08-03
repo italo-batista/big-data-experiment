@@ -18,4 +18,6 @@ export SPARK_HOME=/opt/spark
 export PATH=$SPARK_HOME/bin:$PATH
 EOL
 
+source ~/.bashrc;
+
 pip install pyspark;
