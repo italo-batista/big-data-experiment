@@ -1,9 +1,22 @@
 import re, string
-from pyspark import SparkContext
+from pyspark import SparkContext, SparkConf
 
 print("\n\n\n-----------------------------------------\n\n\n")
 
-sc = SparkContext()
+conf = SparkConf().setAll(
+    [('spark.executor.memory', '6g'),
+    ('spark.executor.cores', '4'),
+    ("spark.driver.port", "1100"),
+    ("spark.port.maxRetries", "20"),
+    ("spark.driver.blockManager.port", "1200"),
+    ("spark.blockManager.port", "1300"),
+    ("spark.shuffle.blockTransferService", "nio"),
+    ('spark.driver.memory','1g')])
+
+
+master="spark://10.11.5.56:7077"
+sc = SparkContext(master=master, appName= "app", conf=conf)
+#sc = SparkContext()
 text_file = sc.textFile('example_text.txt')
 
 punc = '!"#$%&\'()*+,./:;<=>?@[\\]^_`{|}~'
