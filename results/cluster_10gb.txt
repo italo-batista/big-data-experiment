@@ -1,0 +1,4 @@
+
+Query Filter:1.10327410698
+Query Avg:0.125173807144
+Query Select:0.0366621017456

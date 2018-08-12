@@ -1,0 +1,5 @@
+
+Query Count:133.152276993
+Query Filter:1.77794408798
+Query Avg:0.134428977966
+Query Select:0.0757930278778
