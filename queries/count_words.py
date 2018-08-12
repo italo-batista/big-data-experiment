@@ -6,18 +6,18 @@ print("\n\n\n-----------------------------------------\n\n\n")
 conf = SparkConf().setAll(
     [('spark.executor.memory', '6g'),
     ('spark.executor.cores', '4'),
-    ("spark.driver.port", "1100"),
+    ("spark.driver.port", "5000"),
     ("spark.port.maxRetries", "20"),
-    ("spark.driver.blockManager.port", "1200"),
-    ("spark.blockManager.port", "1300"),
+    ("spark.driver.blockManager.port", "5200"),
+    ("spark.blockManager.port", "5300"),
     ("spark.shuffle.blockTransferService", "nio"),
-    ('spark.driver.memory','1g')])
+    ('spark.driver.memory','2g')])
 
 
-master="spark://10.11.5.56:7077"
+master="spark://10.11.5.55:7077"
 sc = SparkContext(master=master, appName= "app", conf=conf)
 #sc = SparkContext()
-text_file = sc.textFile('example_text.txt')
+text_file = sc.textFile('ex.txt')
 
 punc = '!"#$%&\'()*+,./:;<=>?@[\\]^_`{|}~'
 def uni_to_clean_str(x):
